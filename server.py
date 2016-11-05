@@ -30,7 +30,7 @@ def main():
 		while True:
 			data = conns[user].recv(1024).decode('utf-8')
 			for each in range(len(conns)):
-				conns[each].send(data.encode('utf-8'))
+				conns[each].send((data).encode('utf-8'))
 			if not data or connecting:
 				break
 		print('Closing connections')
@@ -41,7 +41,7 @@ def main():
 
 	while True:
 		pass
-		
+
 
 if __name__ == '__main__':
 	main()
